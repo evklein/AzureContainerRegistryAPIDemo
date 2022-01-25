@@ -77,6 +77,8 @@ namespace AzureContainerRegistryAPIDemo
                     var finishUploadResponse = $"https://{registryUrl}{nextUploadLocation}&digest={layerDigest}"
                                                 .WithHeader("Authorization", $"Bearer {azureCredentialToken}")
                                                 .PutAsync();
+
+                    // Manifest upload would occur here, but can't be completed due to the upload failing on the "Finish BLOB Upload" step.
                 }
             }
         }
